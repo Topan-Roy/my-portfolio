@@ -1,6 +1,7 @@
 import { MdDownload } from "react-icons/md";
 import { CgEyeAlt } from "react-icons/cg";
 import Works from "../../component/Works/Works";
+import Skills from "../../component/Skaill/Skaill";
 
 const About = () => {
 
@@ -48,6 +49,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    <Skills></Skills>
        <Works></Works>
    
     </>
