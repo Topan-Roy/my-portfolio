@@ -8,7 +8,7 @@ const RootLayout = () => {
         <div className='w-full mx-auto'>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <Footer></Footer>        
         </div>
     );
 };

@@ -36,7 +36,7 @@ const Study = () => {
                             Higher Secondary Certificate (HSC)
                         </span>
                         <br />
-                       Birganj govt college,Birganj, Dinajpur
+                       Birganj govt college, Dinajpur
                         <br />
                         2019 - 2021
                     </p>
