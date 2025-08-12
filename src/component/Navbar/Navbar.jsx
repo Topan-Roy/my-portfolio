@@ -12,8 +12,8 @@ const Navbar = () => {
             isPending
               ? "opacity-50"
               : isActive
-              ? "text-[#915] underline"
-              : "text-white"
+                ? "text-[#915] underline"
+                : "text-white"
           }
         >
           Home
@@ -26,8 +26,8 @@ const Navbar = () => {
             isPending
               ? "opacity-50"
               : isActive
-              ? "text-[#915] underline"
-              : "text-white"
+                ? "text-[#915] underline"
+                : "text-white"
           }
         >
           About
@@ -40,8 +40,8 @@ const Navbar = () => {
             isPending
               ? "opacity-50"
               : isActive
-              ? "text-[#915] underline"
-              : "text-white"
+                ? "text-[#915] underline"
+                : "text-white"
           }
         >
           Projects
@@ -54,8 +54,8 @@ const Navbar = () => {
             isPending
               ? "opacity-50"
               : isActive
-              ? "text-[#915] underline"
-              : "text-white"
+                ? "text-[#915] underline"
+                : "text-white"
           }
         >
           Contact

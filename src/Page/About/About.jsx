@@ -5,10 +5,29 @@ import Skills from "../../component/Skaill/Skaill";
 import Study from "../../component/Study/Study";
 
 const About = () => {
+  // Google Drive direct download & view URLs
+  const resumeViewUrl = "https://drive.google.com/file/d/1Vu4_2etqCAahoFs4Dj8zivuxVVBKDcv7/view";
+  // Google Drive থেকে সরাসরি ডাউনলোডের জন্য link এ একটু পরিবর্তন দরকার (uc?export=download)
+  const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=1Vu4_2etqCAahoFs4Dj8zivuxVVBKDcv7";
+
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumeDownloadUrl;
+    link.download = "Topan_Roy_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+ 
+  const handleView = () => {
+    window.open(resumeViewUrl, "_blank");
+  };
 
   return (
     <>
-      <section id="about" className="py-10 text-white">
+      <section id="about" className="py-10 bg-gray-900 text-white">
         <div className="text-center mt-8">
           <h3 className="text-4xl font-semibold">
             About <span className="text-cyan-600">Me</span>
@@ -18,21 +37,31 @@ const About = () => {
             <div className="p-2">
               <div className="text-gray-300 my-3">
                 <div className="text-justify leading-7 w-11/12 mx-auto">
-                  <h1 className="text-4xl mb-1 text-white font-Poppins font-semibold" >Topan Roy </h1>
+                  <h1 className="text-4xl mb-1 text-white font-Poppins font-semibold">
+                    Topan Roy
+                  </h1>
                   <h4 className="text-cyan-500 mb-2 text-xl"> Front-end Developer</h4>
                 </div>
                 <p className="text-justify leading-7 w-11/12 mx-auto">
-                  Allow me to introduce myself: Iam a Junior Development Dynamo! With a passion for blending creativity and coding expertise, I thrive on crafting captivating web experiences that seamlessly merge pixels and logic into user-centric marvels
+                  Allow me to introduce myself: I am a Junior Development Dynamo! With a passion for blending creativity and coding expertise, I thrive on crafting captivating web experiences that seamlessly merge pixels and logic into user-centric marvels.
                 </p>
                 <br />
                 <div className="text-justify leading-7 w-11/12 mx-auto">
-                  <p className="text-3xl text-white" > My Resume </p>
+                  <p className="text-3xl text-white">My Resume</p>
                   <div className="flex gap-3 mt-2">
-                    <button className=" text-xl btn btn-outline bg-green-500 ">
-                      <MdDownload></MdDownload>
+                    <button
+                      onClick={handleDownload}
+                      className="text-xl btn btn-outline bg-green-500"
+                      title="Download Resume"
+                    >
+                      <MdDownload />
                     </button>
-                    <button className=" text-xl  btn btn-outline bg-yellow-400 ">
-                      <CgEyeAlt></CgEyeAlt>
+                    <button
+                      onClick={handleView}
+                      className="text-xl btn btn-outline bg-yellow-400"
+                      title="View Resume"
+                    >
+                      <CgEyeAlt />
                     </button>
                   </div>
                 </div>
@@ -50,9 +79,9 @@ const About = () => {
           </div>
         </div>
       </section>
-      <Skills></Skills>
-      <Works></Works>
-      <Study></Study>
+      <Skills />
+      <Works />
+      <Study />
     </>
   );
 };

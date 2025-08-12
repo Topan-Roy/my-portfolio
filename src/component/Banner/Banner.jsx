@@ -5,8 +5,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const Banner = () => {
     return (
         <section
-            id="home"
-            className="min-h-screen flex py-10 md:flex-row flex-col items-center"
+            className="min-h-screen flex bg-gray-900 py-10 md:flex-row flex-col items-center"
         >
             <div className="flex-1 flex items-center justify-center h-full">
                 <img

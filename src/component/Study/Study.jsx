@@ -2,7 +2,7 @@ import React from 'react';
 
 const Study = () => {
     return (
-        <section  className="py-10 px-3 text-white">
+        <section  className="py-10 px-3 bg-gray-900 text-white">
             <div className="text-center">
                 <h3 className="text-4xl font-semibold">
                     Academic Experience
