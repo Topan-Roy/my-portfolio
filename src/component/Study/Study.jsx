@@ -22,7 +22,7 @@ const Study = () => {
                         2020 - 2025
                     </p>
 
-                    <p className="lg:text-left text-justify max-w-lg text-sm mt-6 text-gray-200 leading-6">
+                    {/* <p className="lg:text-left text-justify max-w-lg text-sm mt-6 text-gray-200 leading-6">
                         <span className="font-semibold text-xl text-yellow-600 mb-3">
                             Secondary School Certificate
                         </span>
@@ -30,7 +30,7 @@ const Study = () => {
                         Moricha High School, Dinajpur
                         <br />
                         2017 - 2019
-                    </p>
+                    </p> */}
                     <p className="lg:text-left text-justify max-w-lg text-sm mt-6 text-gray-200 leading-6">
                         <span className="font-semibold text-xl text-yellow-600 mb-3">
                             Higher Secondary Certificate (HSC)
