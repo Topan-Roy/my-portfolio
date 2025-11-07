@@ -5,10 +5,10 @@ import Skills from "../../component/Skaill/Skaill";
 import Study from "../../component/Study/Study";
 
 const About = () => {
-  // Google Drive direct download & view URLs
-  const resumeViewUrl = "https://drive.google.com/file/d/1iA1FdEKnd8Oq45UP8kS9qUY3OAH5MjEA/view?usp=drive_link";
-  // Google Drive থেকে সরাসরি ডাউনলোডের জন্য link এ একটু পরিবর্তন দরকার (uc?export=download)
-  const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=1iA1FdEKnd8Oq45UP8kS9qUY3OAH5MjEA";
+
+  const resumeViewUrl = "https://drive.google.com/file/d/11MbyxjlowLTx4hAomTkMlkynssFaUEq2/view?usp=sharing";
+  
+  const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=11MbyxjlowLTx4hAomTkMlkynssFaUEq2";
 
 
   const handleDownload = () => {
