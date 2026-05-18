@@ -1,81 +1,157 @@
 import { BsGithub } from "react-icons/bs";
+import { FaArrowDown, FaLinkedinIn } from "react-icons/fa6";
 import { CiFacebook } from "react-icons/ci";
-import { FaLinkedin } from "react-icons/fa6";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
+
+const previewProjects = [
+  {
+    label: "Live projects",
+    value: "5+",
+  },
+  {
+    label: "Main stack",
+    value: "Full Stack",
+  },
+  {
+    label: "Mobile apps",
+    value: "React Native",
+  },
+];
+
 const Banner = () => {
-    return (
-        <section
-            className="min-h-screen flex bg-gray-900 py-10 md:flex-row flex-col items-center"
-        >
-            <div className="flex-1 flex items-center justify-center h-full">
-                <img
-                    src="https://i.ibb.co.com/mrycTL6W/IMG-20230528-230617-100-removebg-preview.png"
-                    alt=""
-                    className="md:w-[420px] rounded-[10%] h-[420px] object-cover"
-                />
-            </div>
-            <div className="flex-1">
-                <div className="md:text-left text-center">
-                    <h1 className="md:text-5xl text-xl md:leading-normal leading-10 text-white font-semibold">
-                        <span className="text-cyan-600 md:text-6xl text-5xl">
-                            Hello!
-                            <br />
-                        </span>
-                        My Name is <span>Topan Roy</span>
-                    </h1>
+  return (
+    <section
+      id="home"
+      className="portfolio-section relative flex min-h-screen items-center overflow-hidden px-5 pb-16 pt-28 text-white sm:px-8 lg:px-16"
+    >
+      <div className="hero-mesh" aria-hidden="true" />
 
-                    <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-300">
-                        I'm a{" "}
-                        <span className="text-cyan-400">
-                            <Typewriter
-                                words={[
-                                    'MERN Stack Web Developer 💻',
-                                    'React Developer ⚛️',
-                                    'Front-End Developer 🎨'
-                                ]}
-                                loop={true}
-                                cursor
-                                cursorStyle="|"
-                                typeSpeed={70}
-                                deleteSpeed={50}
-                                delaySpeed={1500}
-                            />
-                        </span>
-                    </h4>
-                    {/* <button className="btn-primary mt-8">Contact Me</button> */}
-                    <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-                        <div className="text-gray-200 flex gap-3  text-3xl hover:text-white cursor-pointer ">
-                            <a
-                                href="https://github.com/Topan-Roy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-sky-400"
-                            >
-                                <BsGithub />
-                            </a>
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
+        <div className="max-w-3xl">
+          <div className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-100 shadow-lg shadow-cyan-950/20 backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.8)]" />
+            <span className="min-w-0">Available for full stack web and React Native apps</span>
+          </div>
 
-                            <a
-                                href="https://web.facebook.com/TopanRoy41105"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-sky-400"
-                            >
-                                <CiFacebook />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/topanroy/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-sky-400"
-                            >
-                                <FaLinkedin />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <h1 className="text-4xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
+            Topan Roy
+            <span className="mt-3 block text-2xl font-semibold text-cyan-200 sm:text-4xl lg:text-5xl">
+              builds web platforms and mobile apps.
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            I am a{" "}
+            <span className="font-semibold text-cyan-300">
+              <Typewriter
+                words={[
+                  "Full Stack Developer",
+                  "React Native App Developer",
+                  "MERN Stack Developer",
+                  "React Developer",
+                ]}
+                loop
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={45}
+                delaySpeed={1400}
+              />
+            </span>
+            , focused on responsive websites, full stack dashboards, APIs, and
+            user-friendly mobile app experiences.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="#projects" className="btn-primary group">
+              View Projects
+              <FaArrowDown className="transition group-hover:translate-y-1" />
+            </a>
+            <a href="#contact" className="btn-secondary">
+              Contact Me
+            </a>
+          </div>
+
+          <div className="mt-9 flex items-center gap-4">
+            <a
+              href="https://github.com/Topan-Roy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="social-link"
+            >
+              <BsGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/topanroy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="social-link"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://web.facebook.com/TopanRoy41105"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="social-link"
+            >
+              <CiFacebook />
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-visual mx-auto w-full max-w-[620px]">
+          <div className="hero-orbit hero-orbit-one" />
+          <div className="hero-orbit hero-orbit-two" />
+
+          <div className="robot-stage" aria-label="Animated portfolio robot">
+            <div className="robot-antenna" />
+            <div className="robot-head">
+              <span className="robot-eye robot-eye-left" />
+              <span className="robot-eye robot-eye-right" />
+              <span className="robot-mouth" />
             </div>
-        </section>
-    );
+            <div className="robot-neck" />
+            <div className="robot-body">
+              <div className="robot-screen">
+                <span />
+                <strong>TOPAN.DEV</strong>
+              </div>
+              <div className="robot-core" />
+            </div>
+            <div className="robot-arm robot-arm-left">
+              <span />
+            </div>
+            <div className="robot-arm robot-arm-right">
+              <span />
+            </div>
+            <div className="robot-base" />
+          </div>
+
+          {previewProjects.map((project, index) => (
+            <div
+              className={`hologram-card hologram-card-${index + 1}`}
+              key={project.label}
+            >
+              <strong>{project.value}</strong>
+              <span>{project.label}</span>
+            </div>
+          ))}
+
+          <div className="profile-chip">
+            <img src="/image.png" alt="Topan Roy" />
+            <div>
+              <strong>Topan Roy</strong>
+              <span>Full stack & app developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Banner;

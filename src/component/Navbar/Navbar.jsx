@@ -1,108 +1,113 @@
-import { styles } from './Style.js';
-import { NavLink } from "react-router";
+import { useEffect, useState } from "react";
+import { FaBars, FaXmark } from "react-icons/fa6";
+import { styles } from "./Style.js";
+
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "services", label: "Services" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
-  const navLink = (
-    <>
-      <li className="text-lg font-semibold">
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "opacity-50"
-              : isActive
-                ? "text-[#915] underline"
-                : "text-white"
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li className="text-lg font-semibold">
-        <NavLink
-          to="/about"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "opacity-50"
-              : isActive
-                ? "text-[#915] underline"
-                : "text-white"
-          }
-        >
-          About
-        </NavLink>
-      </li>
-      <li className="text-lg font-semibold">
-        <NavLink
-          to="/project"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "opacity-50"
-              : isActive
-                ? "text-[#915] underline"
-                : "text-white"
-          }
-        >
-          Projects
-        </NavLink>
-      </li>
-      <li className="text-lg font-semibold">
-        <NavLink
-          to="/contact"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "opacity-50"
-              : isActive
-                ? "text-[#915] underline"
-                : "text-white"
-          }
-        >
-          Contact
-        </NavLink>
-      </li>
-    </>
-  );
+  useEffect(() => {
+    const sectionNodes = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry?.target?.id) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: "-35% 0px -50% 0px",
+        threshold: [0.05, 0.25, 0.5, 0.75],
+      },
+    );
+
+    sectionNodes.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavClick = (event, id) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+
+    if (section) {
+      setIsOpen(false);
+      setActiveSection(id);
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#${id}`);
+    }
+  };
+
+  const renderLink = (item) => {
+    const isActive = activeSection === item.id;
+
+    return (
+      <a
+        key={item.id}
+        href={`#${item.id}`}
+        onClick={(event) => handleNavClick(event, item.id)}
+        className={`nav-link ${isActive ? "nav-link-active" : ""}`}
+      >
+        {item.label}
+      </a>
+    );
+  };
 
   return (
-    <nav className={`${styles.paddingX} w-full py-2 fixed top-0 z-20 bg-transparent`}>
-      <div className="navbar flex justify-center shadow-lg">
-        <div className="navbar-start">
-          <div className="flex md:ml-2 font-serif items-center">
-            <span className="text-lg -ml-2 lg:-ml-0 lg:text-3xl font-bold text-white">Topan</span>
-            <span className="text-xl lg:text-3xl font-bold text-white px-1">|</span>
-            <span className="text-amber-600 sm:text-sm lg:text-lg mt-1 lg:mt-1.5 font-bold">Web Developer</span>
-          </div>
+    <nav className={`${styles.paddingX} fixed top-0 z-40 w-full py-4`}>
+      <div className="nav-glass mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+        <a
+          href="#home"
+          onClick={(event) => handleNavClick(event, "home")}
+          className="flex items-center gap-3"
+          aria-label="Topan Roy portfolio home"
+        >
+          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-cyan-400 text-lg font-black text-slate-950">
+            TR
+          </span>
+          <span className="min-w-0 leading-tight">
+            <span className="block text-lg font-bold text-white">Topan Roy</span>
+            <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200 sm:tracking-[0.28em]">
+              Full Stack Dev
+            </span>
+          </span>
+        </a>
+
+        <div className="hidden items-center gap-2 lg:flex">
+          {navItems.map(renderLink)}
         </div>
 
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navLink}
-          </ul>
-        </div>
-
-        <div className="navbar-end lg:hidden">
-          <div className="dropdown lg:hidden">
-            <label tabIndex={0} className="btn btn-ghost text-white btn-circle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52"
-            >
-              {navLink}
-            </ul>
-          </div>
-        </div>
+        <button
+          type="button"
+          className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-xl text-white lg:hidden"
+          onClick={() => setIsOpen((current) => !current)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <FaXmark /> : <FaBars />}
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl border border-white/10 bg-slate-950/95 p-3 shadow-2xl shadow-cyan-950/40 backdrop-blur lg:hidden">
+          {navItems.map(renderLink)}
+        </div>
+      )}
     </nav>
   );
 };

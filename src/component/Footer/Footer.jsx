@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Footer = () => {
-    return (
-        <div className="bg-gray-800 text-sm p-4 text-center text-white">
-            Copyright © 2025 Topan Roy.All Rights reserved.
-        </div>
-    );
+  return (
+    <footer className="border-t border-white/10 bg-[#071013] px-5 py-8 text-center text-sm text-slate-400">
+      Copyright (c) {new Date().getFullYear()} Topan Roy. All rights reserved.
+    </footer>
+  );
 };
 
 export default Footer;
