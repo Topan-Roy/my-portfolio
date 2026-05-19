@@ -854,6 +854,105 @@ strong {
   line-height: 1.65;
 }
 
+.experience-board {
+  display: grid;
+  gap: 22px;
+}
+
+.experience-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.1), transparent 28%),
+    rgba(255, 255, 255, 0.055);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(#67e8f9, #a7f3d0);
+}
+
+.experience-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid rgba(103, 232, 249, 0.24);
+  border-radius: 20px;
+  color: #67e8f9;
+  background: rgba(103, 232, 249, 0.08);
+  font-size: 1.25rem;
+}
+
+.experience-content {
+  min-width: 0;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.experience-meta span {
+  border: 1px solid rgba(167, 243, 208, 0.18);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #a7f3d0;
+  background: rgba(167, 243, 208, 0.06);
+  font-size: 0.72rem;
+}
+
+.experience-content h3 {
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+}
+
+.experience-company {
+  margin-top: 8px;
+  color: #67e8f9;
+  font-size: 0.95rem;
+}
+
+.experience-content ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding-left: 18px;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.experience-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.experience-stack span {
+  border: 1px solid rgba(103, 232, 249, 0.22);
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: #d7fff3;
+  background: rgba(103, 232, 249, 0.06);
+  font-size: 0.72rem;
+}
+
 .letter-glitch-outer-vignette,
 .letter-glitch-center-vignette {
   position: absolute;
@@ -1473,6 +1572,11 @@ strong {
 
   .lane-skill {
     min-height: 42px;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
   }
 
   .project-book,
