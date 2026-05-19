@@ -645,6 +645,190 @@ strong {
   font-weight: 500;
 }
 
+.skill-workbench {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) 1.35fr;
+  gap: 24px;
+}
+
+.skill-terminal,
+.skill-pipeline {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 16, 19, 0.68);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.skill-terminal {
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.terminal-topbar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.terminal-topbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #67e8f9;
+}
+
+.terminal-topbar span:nth-child(2) {
+  background: #a7f3d0;
+}
+
+.terminal-topbar span:nth-child(3) {
+  background: #fbbf24;
+}
+
+.terminal-lines {
+  display: grid;
+  gap: 14px;
+  padding: 26px 24px;
+  color: #d7fff3;
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-size: 0.88rem;
+}
+
+.terminal-lines p {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: terminalType 520ms ease forwards;
+}
+
+.terminal-lines p:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.terminal-lines p:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.terminal-lines p:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+.terminal-lines p:nth-child(5) {
+  animation-delay: 480ms;
+}
+
+.terminal-lines p:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+.terminal-lines span {
+  color: #61dca3;
+}
+
+.terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 24px 24px;
+  border-radius: 999px;
+  padding: 11px 14px;
+  color: #a7f3d0;
+  background: rgba(97, 220, 163, 0.08);
+  font-size: 0.8rem;
+}
+
+.terminal-status span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #61dca3;
+  box-shadow: 0 0 16px rgba(97, 220, 163, 0.8);
+}
+
+.skill-pipeline {
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 22px;
+  background:
+    linear-gradient(90deg, rgba(103, 232, 249, 0.08), transparent 22%),
+    rgba(7, 16, 19, 0.62);
+}
+
+.skill-lane {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.lane-heading {
+  display: grid;
+  gap: 4px;
+}
+
+.lane-heading span {
+  color: #67e8f9;
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.lane-heading strong {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.lane-track {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-left: 1px solid rgba(103, 232, 249, 0.18);
+  padding: 14px 0 14px 18px;
+}
+
+.lane-track::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 12px;
+  width: 1px;
+  height: calc(100% - 24px);
+  background: linear-gradient(#67e8f9, #61dca3, transparent);
+  animation: laneFlow 2.6s linear infinite;
+}
+
+.lane-skill {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0 14px;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.lane-skill:hover {
+  transform: translateY(-3px);
+  border-color: rgba(103, 232, 249, 0.42);
+  background: rgba(103, 232, 249, 0.1);
+}
+
+.lane-skill svg {
+  font-size: 1.15rem;
+}
+
+.lane-skill span {
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
 .service-card {
   min-height: 260px;
   border-radius: 28px;
@@ -1103,8 +1287,28 @@ strong {
   }
 }
 
+@keyframes terminalType {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes laneFlow {
+  from {
+    transform: translateY(-40%);
+  }
+  to {
+    transform: translateY(40%);
+  }
+}
+
 @media (max-width: 900px) {
   .book-shelf {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-workbench {
     grid-template-columns: 1fr;
   }
 
@@ -1241,6 +1445,34 @@ strong {
 
   .contact-form {
     padding: 20px;
+  }
+
+  .skill-terminal,
+  .skill-pipeline {
+    border-radius: 24px;
+  }
+
+  .skill-pipeline {
+    padding: 16px;
+  }
+
+  .skill-lane {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .lane-track {
+    border-left: 0;
+    border-top: 1px solid rgba(103, 232, 249, 0.18);
+    padding: 12px 0 0;
+  }
+
+  .lane-track::before {
+    display: none;
+  }
+
+  .lane-skill {
+    min-height: 42px;
   }
 
   .project-book,
