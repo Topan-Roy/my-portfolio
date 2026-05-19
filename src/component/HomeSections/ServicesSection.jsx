@@ -1,23 +1,72 @@
-import { FaCode, FaLayerGroup, FaMobileScreenButton } from "react-icons/fa6";
+import {
+  FaArrowRight,
+  FaCode,
+  FaDatabase,
+  FaLayerGroup,
+  FaMobileScreenButton,
+  FaShieldHalved,
+} from "react-icons/fa6";
 
 const services = [
   {
     icon: FaCode,
     title: "Full Stack Web Apps",
-    description:
-      "React interfaces, API integration, authentication, dashboards, CRUD flows, and database-backed features.",
+    summary:
+      "I build complete web applications where the interface, API, database, and deployment work together smoothly.",
+    deliverables: [
+      "Responsive React UI",
+      "Protected routes and auth flow",
+      "CRUD dashboards",
+      "API-connected data views",
+    ],
+    stack: ["React", "Node.js", "Express", "MongoDB", "Firebase"],
+    accent: "Web",
   },
   {
     icon: FaMobileScreenButton,
     title: "React Native Apps",
-    description:
-      "Cross-platform mobile app screens, reusable components, navigation flows, Firebase, and API-connected experiences.",
+    summary:
+      "I create mobile app screens and flows that feel clean, practical, and ready to connect with real backends.",
+    deliverables: [
+      "Reusable app components",
+      "Navigation and screen flow",
+      "Firebase/API integration",
+      "Mobile-first UI polish",
+    ],
+    stack: ["React Native", "JavaScript", "Firebase", "REST API"],
+    accent: "Mobile",
   },
   {
     icon: FaLayerGroup,
     title: "MERN Product Flow",
-    description:
-      "From frontend to backend: Node.js, Express, MongoDB, Firebase, deployment, and practical product structure.",
+    summary:
+      "I structure MERN products from idea to launch with clear feature flow, maintainable code, and deployment-ready setup.",
+    deliverables: [
+      "Feature planning",
+      "Role-based dashboard",
+      "Server and database logic",
+      "Deployment support",
+    ],
+    stack: ["MERN", "JWT", "Vercel", "Firebase Hosting"],
+    accent: "Product",
+  },
+];
+
+const workflow = [
+  {
+    icon: FaShieldHalved,
+    title: "Reliable flow",
+    text: "Clear auth, validation, and predictable user journeys.",
+  },
+  {
+    icon: FaDatabase,
+    title: "Data-backed",
+    text: "MongoDB/Firebase data structures connected with practical UI.",
+  },
+  {
+    icon: FaArrowRight,
+    title: "Launch ready",
+    text: "Responsive polish, deployment checks, and live project handoff.",
   },
 ];
 
@@ -27,21 +76,55 @@ const ServicesSection = () => {
       <div className="mx-auto max-w-7xl">
         <div className="section-heading">
           <p className="section-kicker">What I do</p>
-          <h2 className="section-title">I build the web, backend, and app pieces a product needs.</h2>
+          <h2 className="section-title">I build useful products from screen to server.</h2>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
+        <div className="services-showcase mt-12">
+          <div className="services-grid">
+            {services.map((service, index) => {
+              const Icon = service.icon;
 
-            return (
-              <article className="service-card" key={service.title}>
-                <Icon className="text-4xl text-cyan-300" />
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </article>
-            );
-          })}
+              return (
+                <article className="service-detail-card" key={service.title}>
+                  <div className="service-card-top">
+                    <span className="service-index">0{index + 1}</span>
+                    <span className="service-accent">{service.accent}</span>
+                  </div>
+                  <div className="service-icon">
+                    <Icon />
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.summary}</p>
+                  <ul>
+                    {service.deliverables.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <div className="service-stack">
+                    {service.stack.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="service-workflow">
+            {workflow.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div className="workflow-step" key={item.title}>
+                  <Icon />
+                  <div>
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
