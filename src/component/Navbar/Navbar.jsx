@@ -77,9 +77,11 @@ const Navbar = () => {
           className="flex items-center gap-3"
           aria-label="Topan Roy portfolio home"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-cyan-400 text-lg font-medium text-slate-950">
-            TR
-          </span>
+          <img
+            src="/image.png"
+            alt="Topan Roy"
+            className="h-10 w-10 rounded-2xl border border-cyan-300/40 object-cover"
+          />
           <span className="min-w-0 leading-tight">
             <span className="block text-base font-medium text-white">Topan Roy</span>
             <span className="block text-xs font-medium uppercase tracking-[0.2em] text-cyan-200 sm:tracking-[0.28em]">
