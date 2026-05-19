@@ -27,7 +27,7 @@ import {
 import Banner from "../../component/Banner/Banner";
 
 const resumeViewUrl =
-  "https://drive.google.com/file/d/1z50YyFZhJXLMu7IiY2Sbd3o7Lp2zbczG/view?usp=drive_link";
+  "https://drive.google.com/file/d/1C9uev8sp_6gIywFaUq1jYl-nM-ochr18/view?usp=drive_link";
 
 const skills = [
   { name: "React", icon: FaReact, color: "text-cyan-300" },
@@ -224,7 +224,7 @@ const Home = () => {
             <h2 className="section-title">
               I turn ideas into full stack web products and mobile app experiences.
             </h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            <p className="mt-6 max-w-3xl text-base leading-7 text-slate-300">
               I am Topan Roy, a full stack developer from Dinajpur,
               Bangladesh. I build practical products with React, React Native,
               Tailwind, Firebase, Node.js, Express, and MongoDB. My focus is
@@ -388,7 +388,7 @@ const Home = () => {
           <div>
             <p className="section-kicker">Contact</p>
             <h2 className="section-title">Let us build something useful.</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-300">
+            <p className="mt-5 text-base leading-7 text-slate-300">
               Send a message for web projects, mobile apps, collaboration, or full stack work. I
               usually respond as soon as I can.
             </p>
@@ -451,7 +451,7 @@ const Home = () => {
                 rows={7}
               />
             </label>
-            <button type="submit" className="btn-primary w-full justify-center sm:w-fit">
+            <button type="submit" className="btn-primary contact-submit-btn w-full justify-center sm:w-fit">
               Send Message
               <FaArrowRight />
             </button>

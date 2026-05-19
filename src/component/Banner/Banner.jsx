@@ -33,16 +33,16 @@ const Banner = () => {
             <span className="min-w-0">Available for full stack web and React Native apps</span>
           </div>
 
-          <h1 className="text-4xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
             Topan Roy
-            <span className="mt-3 block text-2xl font-semibold text-cyan-200 sm:text-4xl lg:text-5xl">
+            <span className="mt-3 block text-lg font-medium text-cyan-200 sm:text-2xl lg:text-3xl">
               builds web platforms and mobile apps.
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300">
             I am a{" "}
-            <span className="font-semibold text-cyan-300">
+            <span className="font-medium text-cyan-300">
               <Typewriter
                 words={[
                   "Full Stack Developer",
