@@ -1,3 +1,5 @@
+"use client";
+
 import { BsGithub } from "react-icons/bs";
 import { FaArrowDown, FaLinkedinIn } from "react-icons/fa6";
 import { CiFacebook } from "react-icons/ci";

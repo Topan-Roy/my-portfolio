@@ -1,15 +1,14 @@
 import Navbar from '../component/Navbar/Navbar';
-import { Outlet } from 'react-router';
 import Footer from '../component/Footer/Footer';
 import CursorGlow from '../component/CursorGlow/CursorGlow';
 
 
-const RootLayout = () => {
+const RootLayout = ({ children }) => {
     return (
         <div className='mx-auto w-full'>
             <CursorGlow />
             <Navbar />
-            <Outlet />
+            {children}
             <Footer />
         </div>
     );

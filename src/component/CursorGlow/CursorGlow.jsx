@@ -1,6 +1,8 @@
-    import React, { useEffect, useState } from "react";
+"use client";
 
-    const CursorGlow = () => {
+import { useEffect, useState } from "react";
+
+const CursorGlow = () => {
     const [particles, setParticles] = useState([]);
 
     
@@ -61,4 +63,4 @@
     );
     };
 
-    export default CursorGlow;
+export default CursorGlow;
