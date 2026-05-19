@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 const previewProjects = [
   {
     label: "Live projects",
-    value: "5+",
+    value: "20+",
   },
   {
     label: "Main stack",

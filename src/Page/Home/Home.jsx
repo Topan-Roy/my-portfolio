@@ -234,7 +234,7 @@ const Home = () => {
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {[
-                ["5+", "Projects completed"],
+                ["20+", "Live projects"],
                 ["Full Stack", "Web + API"],
                 ["React Native", "Mobile apps"],
                 ["2025", "Web development training"],
