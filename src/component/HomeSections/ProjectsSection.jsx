@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
 const projects = [
@@ -59,6 +61,9 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section id="projects" className="portfolio-section px-5 py-24 sm:px-8 lg:px-16">
       <div className="mx-auto max-w-7xl">
@@ -68,7 +73,7 @@ const ProjectsSection = () => {
         </div>
 
         <div className="book-shelf mt-14">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <article className="project-book" key={project.id}>
               <div className="book-cover">
                 <div className="book-ridge" />
@@ -114,6 +119,17 @@ const ProjectsSection = () => {
             </article>
           ))}
         </div>
+
+        {projects.length > 4 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="btn-secondary cursor-pointer"
+            >
+              {showAll ? "Show Less" : "See More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

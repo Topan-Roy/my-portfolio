@@ -1158,7 +1158,7 @@ strong {
 .project-book {
   position: relative;
   display: grid;
-  min-height: 360px;
+  min-height: 300px;
   perspective: 1700px;
   transform-style: preserve-3d;
 }
@@ -1193,7 +1193,7 @@ strong {
   position: relative;
   z-index: 3;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 300px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background:
     linear-gradient(90deg, rgba(6, 16, 20, 0.95), rgba(15, 118, 110, 0.22) 18%, transparent 36%),
@@ -1298,8 +1298,8 @@ strong {
 }
 
 .book-page {
-  min-height: 360px;
-  padding: 24px;
+  min-height: 300px;
+  padding: 18px;
   color: #071013;
   background:
     linear-gradient(90deg, rgba(6, 16, 20, 0.08), transparent 14%, transparent 86%, rgba(6, 16, 20, 0.08)),
@@ -1355,13 +1355,13 @@ strong {
 }
 
 .tech-pill {
-  border: 1px solid rgba(103, 232, 249, 0.22);
+  border: 1px solid rgba(15, 118, 110, 0.35);
   border-radius: 999px;
   padding: 7px 11px;
-  color: #a7f3d0;
-  background: rgba(103, 232, 249, 0.06);
-  font-size: 0.68rem;
-  font-weight: 500;
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.08);
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
 .timeline-list {

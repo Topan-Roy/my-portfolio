@@ -11,13 +11,17 @@ import {
   SiFirebase,
   SiJavascript,
   SiMongodb,
+  SiNextdotjs,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 const skills = [
   { name: "React", icon: FaReact, color: "text-cyan-300" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
   { name: "React Native", icon: FaMobileScreenButton, color: "text-emerald-300" },
   { name: "JavaScript", icon: SiJavascript, color: "text-yellow-300" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-sky-300" },
   { name: "Firebase", icon: SiFirebase, color: "text-amber-300" },
   { name: "MongoDB", icon: SiMongodb, color: "text-emerald-300" },
@@ -33,7 +37,7 @@ const skillGroups = [
     title: "Interface",
     command: "build:ui",
     items: skills.filter((skill) =>
-      ["React", "React Native", "Tailwind", "HTML5", "CSS3"].includes(skill.name),
+      ["React", "Next.js", "React Native", "Tailwind", "HTML5", "CSS3"].includes(skill.name),
     ),
   },
   {
@@ -46,7 +50,7 @@ const skillGroups = [
   {
     title: "Workflow",
     command: "deploy:ready",
-    items: skills.filter((skill) => ["JavaScript", "GitHub"].includes(skill.name)),
+    items: skills.filter((skill) => ["JavaScript", "TypeScript", "GitHub"].includes(skill.name)),
   },
 ];
 
