@@ -13,7 +13,7 @@ export const metadata = {
   },
 };
 
-const RootLayout = ({ children }) => {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
@@ -28,6 +28,4 @@ const RootLayout = ({ children }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

@@ -15,7 +15,7 @@ const BackToTop = () => {
   const scrollToBottom = () => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
 
   const showTop = scrollPos > 400;
-  const atBottom = window.innerHeight + scrollPos >= document.documentElement.scrollHeight - 50;
+  const atBottom = typeof window !== "undefined" && (window.innerHeight + scrollPos >= document.documentElement.scrollHeight - 50);
 
   return (
     <div className="fixed bottom-8 right-8 z-[999] flex flex-col gap-3">
