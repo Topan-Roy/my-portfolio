@@ -5,8 +5,10 @@ import { useEffect, useState } from 'react';
 
 const GithubSection = () => {
   const [stats, setStats] = useState({ repos: 0, stars: 0, commits: 0, followers: 0 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const fetchStats = async () => {
       try {
         // Fetch user profile (repos, followers)
@@ -100,15 +102,17 @@ const GithubSection = () => {
             </div>
 
             {/* Calendar */}
-            <div className="flex justify-center overflow-x-auto pb-4 scrollbar-hide relative z-10">
-              <GitHubCalendar
-                username="Topan-Roy"
-                colorScheme="dark"
-                theme={cyanTheme}
-                blockSize={15}
-                blockMargin={5}
-                fontSize={14}
-              />
+            <div className="flex justify-center overflow-x-auto pb-4 scrollbar-hide relative z-10 min-h-[150px]">
+              {mounted && (
+                <GitHubCalendar
+                  username="Topan-Roy"
+                  colorScheme="dark"
+                  theme={cyanTheme}
+                  blockSize={15}
+                  blockMargin={5}
+                  fontSize={14}
+                />
+              )}
             </div>
 
           </div>
