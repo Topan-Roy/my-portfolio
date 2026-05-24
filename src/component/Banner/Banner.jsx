@@ -64,13 +64,20 @@ const Banner = () => {
             user-friendly mobile app experiences.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a href="#projects" className="btn-primary group">
               View Projects
               <FaArrowDown className="transition group-hover:translate-y-1" />
             </a>
             <a href="#contact" className="btn-secondary">
               Contact Me
+            </a>
+            <a
+              href="/Topan-Roy-CV.pdf"
+              download="Topan-Roy-CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-6 py-3 text-sm font-semibold text-emerald-300 backdrop-blur transition-all hover:bg-emerald-400/20 hover:border-emerald-400/70 hover:text-emerald-200 hover:shadow-[0_0_20px_rgba(52,211,153,0.2)]"
+            >
+              <FaArrowDown className="text-xs" /> Download CV
             </a>
           </div>
 
