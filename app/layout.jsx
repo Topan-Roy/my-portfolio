@@ -15,8 +15,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-[#071013] text-white dark:bg-gray-900 dark:text-gray-100 overflow-x-hidden" suppressHydrationWarning>
         <div className="mx-auto w-full">
           <ScrollProgressBar />
           <CursorGlow />

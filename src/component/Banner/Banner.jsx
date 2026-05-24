@@ -4,6 +4,7 @@ import { BsGithub } from "react-icons/bs";
 import { FaArrowDown, FaLinkedinIn } from "react-icons/fa6";
 import { CiFacebook } from "react-icons/ci";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 const previewProjects = [
   {
@@ -29,7 +30,12 @@ const Banner = () => {
       <div className="hero-mesh" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
-        <div className="max-w-3xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl"
+        >
           <div className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-100 shadow-lg shadow-cyan-950/20 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.8)]" />
             <span className="min-w-0">Available for full stack web and React Native apps</span>
@@ -110,9 +116,14 @@ const Banner = () => {
               <CiFacebook />
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="hero-visual mx-auto w-full max-w-[620px]">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="hero-visual mx-auto w-full max-w-[620px]"
+        >
           <div className="hero-orbit hero-orbit-one" />
           <div className="hero-orbit hero-orbit-two" />
 
@@ -157,7 +168,7 @@ const Banner = () => {
               <span>Full stack & app developer</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

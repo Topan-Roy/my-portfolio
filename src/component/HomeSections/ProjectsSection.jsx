@@ -8,8 +8,8 @@ const projects = [
     name: "Tourism Management System",
     duration: "20 days",
     image: "https://i.ibb.co.com/XxjDxMYJ/tur.png",
-    description:
-      "A full stack tourism platform with bookings, payments, role-based dashboard, and package management.",
+    description: "A full stack tourism platform with bookings, payments, role-based dashboard, and package management.",
+    problemSolved: "Streamlines booking processes and automates itinerary generation.",
     tech: ["React", "Node", "MongoDB", "Firebase"],
     live: "https://tourism-management-syste-e2926.web.app/",
     github: "https://github.com/Topan-Roy/tourism-management-client-git",
@@ -19,8 +19,8 @@ const projects = [
     name: "Online Group Study",
     duration: "15 days",
     image: "https://i.ibb.co.com/HfHnktZW/stu.png",
-    description:
-      "A collaborative study app with assignments, reviews, protected routes, and real-time updates.",
+    description: "A collaborative study app with assignments, reviews, protected routes, and real-time updates.",
+    problemSolved: "Solves remote study collaboration by providing a centralized assignment review system.",
     tech: ["React", "Express", "MongoDB"],
     live: "https://online-group-study-f26a8.web.app/",
     github: "https://github.com/Topan-Roy/online-group-study-client11",
@@ -30,8 +30,8 @@ const projects = [
     name: "Plant Care Tracker",
     duration: "10 days",
     image: "https://i.ibb.co.com/DPnqjPGK/tree.png",
-    description:
-      "A plant tracking product for care schedules, health status, and personal plant collections.",
+    description: "A plant tracking product for care schedules, health status, and personal plant collections.",
+    problemSolved: "Helps busy plant owners keep track of watering and fertilizing schedules easily.",
     tech: ["React", "Firebase", "MongoDB"],
     live: "https://plant-care-tracker-3a085.web.app/",
     github: "https://github.com/Topan-Roy/plant-care-tracker-client-git",
@@ -41,8 +41,8 @@ const projects = [
     name: "Bhajon Food Ordering",
     duration: "7 days",
     image: "https://i.ibb.co.com/spG1398s/bhojon.png",
-    description:
-      "A modern food ordering platform with authentication, responsive menus, and order-focused UI.",
+    description: "A modern food ordering platform with authentication, responsive menus, and order-focused UI.",
+    problemSolved: "Provides a seamless and fast ordering experience with intuitive UI for restaurants.",
     tech: ["React", "Firebase", "Tailwind"],
     live: "https://bhajon-3d8a3.web.app/",
     github: "https://github.com/Topan-Roy/Bhojon-client",
@@ -52,9 +52,9 @@ const projects = [
     name: "Cholo Ride Sharing",
     duration: "36 days",
     image: "https://i.ibb.co.com/RkZZ1phL/cholo.png",
-    description:
-      "A team-built ride sharing platform with rider/driver flows, live requests, and role-based dashboards.",
-    tech: ["Team Project", "React", "MERN"],
+    description: "A team-built ride sharing platform with rider/driver flows, live requests, and role-based dashboards.",
+    problemSolved: "Connects riders and drivers with real-time location matching and secure authentication.",
+    tech: ["React", "Express", "Socket.io"],
     live: "https://cholo.netlify.app/",
     github: "https://github.com/Utso-Roy/cholo_ride_sharing_-team-",
   },
@@ -94,23 +94,33 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                <div className="book-page book-page-right">
-                  <p className="book-label">Details</p>
-                  <p>{project.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span className="tech-pill" key={`${project.name}-${tech}`}>
-                        {tech}
-                      </span>
-                    ))}
+                <div className="book-page book-page-right overflow-y-auto pr-2 custom-scrollbar">
+                  <p className="book-label">Project Details</p>
+                  <p className="text-sm text-slate-700 leading-relaxed font-medium mb-3">{project.description}</p>
+                  
+                  <div className="mb-3">
+                    <span className="text-xs font-bold text-cyan-700 uppercase tracking-wider block mb-1">Problem Solved:</span>
+                    <p className="text-xs text-slate-600 leading-tight">{project.problemSolved}</p>
                   </div>
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link-primary">
+
+                  <div>
+                    <span className="text-xs font-bold text-cyan-700 uppercase tracking-wider block mb-2">Tech Stack:</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech.map((tech) => (
+                        <span className="tech-pill text-[10px] py-1 px-2 bg-slate-100 text-slate-700 rounded-full border border-slate-200" key={`${project.name}-${tech}`}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap gap-2 pt-3 border-t border-slate-200">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link-primary text-xs py-1.5 px-3 rounded-full flex items-center gap-1.5 bg-cyan-600 text-white hover:bg-cyan-700 transition">
                       Live Preview
                       <FaArrowUpRightFromSquare />
                     </a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-secondary">
-                      GitHub
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-secondary text-xs py-1.5 px-3 rounded-full flex items-center gap-1.5 bg-slate-800 text-white hover:bg-slate-900 transition">
+                      GitHub Repo
                       <FaGithub />
                     </a>
                   </div>
