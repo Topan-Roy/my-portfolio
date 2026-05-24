@@ -33,24 +33,33 @@ const Banner = () => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }}
           className="max-w-3xl"
         >
-          <div className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-100 shadow-lg shadow-cyan-950/20 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.8)]" />
-            <span className="min-w-0">Available for full stack web and React Native apps</span>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-cyan-500/30 bg-cyan-900/20 px-5 py-2 text-sm text-cyan-50 shadow-[0_0_20px_rgba(6,182,212,0.15)] backdrop-blur-md"
+          >
+            <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)] animate-pulse" />
+            <span className="min-w-0 font-medium tracking-wide">Available for full stack web and React Native apps</span>
+          </motion.div>
 
-          <h1 className="text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-7xl"
+          >
             Topan Roy
-            <span className="mt-3 block text-lg font-medium text-cyan-200 sm:text-2xl lg:text-3xl">
-              builds web platforms and mobile apps.
+            <span className="mt-4 block text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-300 sm:text-3xl lg:text-4xl">
+              builds web platforms & mobile apps.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 font-medium"
+          >
             I am a{" "}
-            <span className="font-medium text-cyan-300">
+            <span className="font-bold text-cyan-300">
               <Typewriter
                 words={[
                   "Full Stack Developer",
@@ -68,24 +77,28 @@ const Banner = () => {
             </span>
             , focused on responsive websites, full stack dashboards, APIs, and
             user-friendly mobile app experiences.
-          </p>
+          </motion.p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a href="#projects" className="btn-primary group">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap items-center"
+          >
+            <a href="#projects" className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 px-8 py-4 font-bold text-white shadow-[0_0_40px_rgba(6,182,212,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(6,182,212,0.6)]">
+              <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity group-hover:opacity-100"></span>
               View Projects
-              <FaArrowDown className="transition group-hover:translate-y-1" />
+              <FaArrowDown className="transition-transform group-hover:translate-y-1" />
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href="#contact" className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-600 bg-transparent px-8 py-3.5 font-bold text-slate-300 transition-all hover:border-cyan-400 hover:text-white hover:bg-cyan-900/20">
               Contact Me
             </a>
             <a
               href="/Topan-Roy-CV.pdf"
               download="Topan-Roy-CV.pdf"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-6 py-3 text-sm font-semibold text-emerald-300 backdrop-blur transition-all hover:bg-emerald-400/20 hover:border-emerald-400/70 hover:text-emerald-200 hover:shadow-[0_0_20px_rgba(52,211,153,0.2)]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-800/50 px-8 py-4 font-bold text-emerald-400 backdrop-blur-md transition-all hover:bg-slate-800 hover:text-emerald-300 hover:shadow-[0_0_20px_rgba(52,211,153,0.2)]"
             >
-              <FaArrowDown className="text-xs" /> Download CV
+              <FaArrowDown className="transition-transform group-hover:translate-y-1" /> Download CV
             </a>
-          </div>
+          </motion.div>
 
           <div className="mt-9 flex items-center gap-4">
             <a
