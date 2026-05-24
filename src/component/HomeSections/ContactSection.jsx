@@ -69,6 +69,27 @@ const ContactSection = () => {
       return;
     }
 
+    // 1. Send email to roytopan734@gmail.com using Web3Forms
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "647117aa-38ca-4130-a5b0-196db2a19b8d",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Message from ${formData.name}`,
+        }),
+      });
+    } catch (emailError) {
+      console.error("Email sending failed:", emailError);
+    }
+
+    // 2. Save data to your MongoDB Server
     try {
       const response = await fetch(
         "https://my-portfolio-server-blush.vercel.app/contact",
