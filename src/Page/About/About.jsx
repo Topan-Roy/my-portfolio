@@ -6,9 +6,9 @@ import Study from "../../component/Study/Study";
 
 const About = () => {
 
-  const resumeViewUrl = "https://drive.google.com/file/d/1C9uev8sp_6gIywFaUq1jYl-nM-ochr18/view?usp=drive_link";
+  const resumeViewUrl = "https://drive.google.com/drive/folders/1TqbtMwg_lI7zJSQXsT42QENUjNxt9qfb";
   
-  const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=1C9uev8sp_6gIywFaUq1jYl-nM-ochr18";
+  const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=1gfo9gMOSU91FIkVhaznwcCWuxrTr7KYw";
 
 
   const handleDownload = () => {

@@ -30,13 +30,13 @@ const Banner = () => {
       <div className="hero-mesh" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }}
           className="max-w-3xl"
         >
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-cyan-500/30 bg-cyan-900/20 px-5 py-2 text-sm text-cyan-50 shadow-[0_0_20px_rgba(6,182,212,0.15)] backdrop-blur-md"
           >
@@ -44,7 +44,7 @@ const Banner = () => {
             <span className="min-w-0 font-medium tracking-wide">Available for full stack web and React Native apps</span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-7xl"
           >
@@ -54,7 +54,7 @@ const Banner = () => {
             </span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 font-medium"
           >
@@ -79,7 +79,7 @@ const Banner = () => {
             user-friendly mobile app experiences.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap items-center"
           >
@@ -92,8 +92,7 @@ const Banner = () => {
               Contact Me
             </a>
             <a
-              href="/Topan-Roy-CV.pdf"
-              download="Topan-Roy-CV.pdf"
+              href="https://drive.google.com/uc?export=download&id=1gfo9gMOSU91FIkVhaznwcCWuxrTr7KYw"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-800/50 px-8 py-4 font-bold text-emerald-400 backdrop-blur-md transition-all hover:bg-slate-800 hover:text-emerald-300 hover:shadow-[0_0_20px_rgba(52,211,153,0.2)]"
             >
               <FaArrowDown className="transition-transform group-hover:translate-y-1" /> Download CV
@@ -131,7 +130,7 @@ const Banner = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
